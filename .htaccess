@@ -1,0 +1,10 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]
+
+RedirectMatch 404 .git
+RedirectMatch 404 README.md
+RedirectMatch 404 docs
+RedirectMatch 404 uploads
+RedirectMatch 404 temp
