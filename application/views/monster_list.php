@@ -1,4 +1,5 @@
 <p class="title">Monster List</p>
+<a href="add/">add</a>
 <?php
 $attributes = array(
 	'id' => 'search',
