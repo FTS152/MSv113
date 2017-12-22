@@ -41,8 +41,6 @@ class Monster extends CI_Controller
 		else if(!empty($_GET['name']))
 		{
 			$this->load->model('monster_model');
-			$this->load->model('map_model');
-			$this->load->model('item_model');
 			$monster_data=array(
 				'name' => $_GET['name'],
 				'lv' => $_GET['level'],				
@@ -53,25 +51,13 @@ class Monster extends CI_Controller
 				'exp' => $_GET['exp'],
 			);
 			if(!empty($_GET['hauntlist'])) {
-				$monster_haunt = array();
-				$monster_haunt = explode("\n", trim($_GET['hauntlist']));
 				$haunt_id_list = array();
-				foreach ($monster_haunt as $row) 
-				{
-					$haunt = $this->map_model->get_id_by_name($row);
-					if($haunt) array_push($haunt_id_list,$haunt);
-				}
+				$haunt_id_list = $this->monster_model->get_asso($_GET['hauntlist'],'map_model');
 			}
 			
 			if(!empty($_GET['trophylist'])){
-				$monster_trophy = array();
-				$monster_trophy = explode("\n", trim($_GET['trophylist']));
 				$trophy_id_list = array();
-				foreach ($monster_trophy as $row) 
-				{
-					$trophy = $this->item_model->get_id_by_name($row);
-					if($trophy) array_push($trophy_id_list,$trophy);
-				}				
+				$trophy_id_list = $this->monster_model->get_asso($_GET['trophylist'],'item_model');
 			} 
 			$this->db->insert('monster',$monster_data);
 			
@@ -100,6 +86,83 @@ class Monster extends CI_Controller
 
 		}
 		$this->load->view('monster_add.php');
+	}
+
+	public function edit()
+	{
+		if(!$this->session->userdata('username'))
+		{
+			redirect('login/');
+		}
+		else if(!empty($_GET['name']))
+		{
+			$this->load->model('monster_model');
+			$monster_data=array(
+				'name' => $_GET['name'],
+				'lv' => $_GET['level'],				
+				'hp' => $_GET['hp'],				
+				'mp' => $_GET['mp'],				
+				'atk' => $_GET['atk'],				
+				'def' => $_GET['def'],
+				'exp' => $_GET['exp'],
+			);
+			if(!empty($_GET['hauntlist'])) {
+				$haunt_id_list = array();
+				$haunt_id_list = $this->monster_model->get_asso($_GET['hauntlist'],'map_model');
+			}
+			
+			if(!empty($_GET['trophylist'])){
+				$trophy_id_list = array();
+				$trophy_id_list = $this->monster_model->get_asso($_GET['trophylist'],'item_model');
+			} 
+			$this->db->insert('monster',$monster_data);
+			
+			$monster_id = $this->monster_model->get_id_by_name($_GET['name']);
+			if(!empty($haunt_id_list)){
+				foreach ($haunt_id_list as $row){
+					$haunt_data = array(
+						'monster_id' => $monster_id,
+						'map_id' => $row,
+					);
+					$this->db->insert('monster_haunt',$haunt_data);
+				}
+			}
+			if(!empty($trophy_id_list)){
+				foreach ($trophy_id_list as $row){
+					$trophy_data = array(
+						'monster_id' => $monster_id,
+						'item_id' => $row,
+					);
+					$this->db->insert('monster_trophy',$trophy_data);
+				}
+			}
+
+
+			redirect('monster/');
+
+		}
+		$this->load->view('monster_edit.php');
+	}
+
+
+//unfinished
+	public function delete()
+	{
+		if(!$this->session->userdata('username'))
+		{
+			redirect('login/');
+		}
+		else 
+		{
+			$this->load->model('monster_model');
+			$this->db->where('id',$_GET['id']);
+			$this->db->delete('monster');
+			$this->db->where('monster_id',$_GET['id']);
+			$this->db->delete('monster_haunt');			
+			$this->db->where('monster_id',$_GET['id']);
+			$this->db->delete('monster_trophy');
+			redirect('monster/');
+		}
 	}
 }
 

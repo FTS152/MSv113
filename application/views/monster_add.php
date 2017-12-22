@@ -3,7 +3,7 @@
 $attributes = array(
 	'id' => 'add',
 	'name' => 'add',
-	'method' => 'get'
+	'method' => 'GET'
 );
 echo form_open('monster/add/',$attributes);
 ?>
