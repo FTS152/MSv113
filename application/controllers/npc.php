@@ -3,7 +3,7 @@ class Npc extends CI_Controller
 {
 	public function index()
 	{
-		if(isset($_GET['name'])) $this->db->like('name',$_GET['name']);
+		if(!empty($_GET['name'])) $this->db->like('name',$_GET['name']);
 		$query=$this->db->get('npc');
 		echo json_encode($query->result(),JSON_UNESCAPED_UNICODE);
 		$this->load->view('npc_list.php');

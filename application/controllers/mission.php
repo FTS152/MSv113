@@ -1,9 +1,13 @@
 <?php
-class mission extends CI_Controller
+class Mission extends CI_Controller
 {
 	public function index()
 	{
-		if(isset($_GET['name'])) $this->db->like('name',$_GET['name']);
+		if(!empty($_GET['level'])) {
+			$this->db->where('highest_lv>=',$_GET['level']);
+			$this->db->where('lowest_lv<=',$_GET['level']);
+		}
+		if(!empty($_GET['name'])) $this->db->like('name',$_GET['name']);
 		$query=$this->db->get('mission');
 		echo json_encode($query->result(),JSON_UNESCAPED_UNICODE);
 		$this->load->view('mission_list.php');

@@ -3,7 +3,8 @@ class item extends CI_Controller
 {
 	public function index()
 	{
-		if(isset($_GET['name'])) $this->db->like('name',$_GET['name']);
+		if(!empty($_GET['name'])) $this->db->like('name',$_GET['name']);
+		if(!empty($_GET['type'])) $this->db->like('type',$_GET['type']);
 		$query=$this->db->get('item');
 		echo json_encode($query->result(),JSON_UNESCAPED_UNICODE);
 		$this->load->view('item_list.php');

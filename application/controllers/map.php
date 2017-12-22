@@ -3,8 +3,8 @@ class map extends CI_Controller
 {
 	public function index()
 	{
-		if(isset($_GET['name'])) $this->db->like('name',$_GET['name']);
-		if(isset($_GET['area'])) $this->db->like('area',$_GET['area']);
+		if(!empty($_GET['name'])) $this->db->like('name',$_GET['name']);
+		if(!empty($_GET['area'])) $this->db->like('area',$_GET['area']);
 		$query=$this->db->get('map');
 		echo json_encode($query->result(),JSON_UNESCAPED_UNICODE);
 		$this->load->view('map_list.php');
