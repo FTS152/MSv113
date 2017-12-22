@@ -88,6 +88,7 @@ class Monster extends CI_Controller
 		$this->load->view('monster_add.php');
 	}
 
+//未完成功能: 傳預設值至view
 	public function edit()
 	{
 		if(!$this->session->userdata('username'))
@@ -115,13 +116,16 @@ class Monster extends CI_Controller
 				$trophy_id_list = array();
 				$trophy_id_list = $this->monster_model->get_asso($_GET['trophylist'],'item_model');
 			} 
-			$this->db->insert('monster',$monster_data);
-			
-			$monster_id = $this->monster_model->get_id_by_name($_GET['name']);
+			$this->db->where('id',$_GET['id']);
+			$this->db->update('monster',$monster_data);
+			$this->db->where('monster_id',$_GET['id']);
+			$this->db->delete('monster_haunt');			
+			$this->db->where('monster_id',$_GET['id']);
+			$this->db->delete('monster_trophy');
 			if(!empty($haunt_id_list)){
 				foreach ($haunt_id_list as $row){
 					$haunt_data = array(
-						'monster_id' => $monster_id,
+						'monster_id' => $_GET['id'],
 						'map_id' => $row,
 					);
 					$this->db->insert('monster_haunt',$haunt_data);
@@ -130,7 +134,7 @@ class Monster extends CI_Controller
 			if(!empty($trophy_id_list)){
 				foreach ($trophy_id_list as $row){
 					$trophy_data = array(
-						'monster_id' => $monster_id,
+						'monster_id' => $_GET['id'],
 						'item_id' => $row,
 					);
 					$this->db->insert('monster_trophy',$trophy_data);
@@ -141,11 +145,10 @@ class Monster extends CI_Controller
 			redirect('monster/');
 
 		}
+
 		$this->load->view('monster_edit.php');
 	}
 
-
-//unfinished
 	public function delete()
 	{
 		if(!$this->session->userdata('username'))
