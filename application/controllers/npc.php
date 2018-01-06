@@ -1,12 +1,13 @@
 <?php
+header('Content-Type: application/json; charset=UTF-8');
 class Npc extends CI_Controller
 {
 	public function index()
 	{
-		if(!empty($_GET['name'])) $this->db->like('name',$_GET['name']);
+		if(!empty($_GET['name']))
+			$this->db->like('name', $_GET['name']);
 		$query=$this->db->get('npc');
 		echo json_encode($query->result(),JSON_UNESCAPED_UNICODE);
-		$this->load->view('npc_list.php');
 	}
 
 	public function view()
