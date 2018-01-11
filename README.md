@@ -31,46 +31,47 @@ xxxxxx/delete/?id= : 刪除資料
 ```
 
 目前add和edit的各資料格式
+資料間的關係建立以輸入名稱為主，但名稱需是資料庫中已存在的資料
 
 ```
 monster:
-$_GET['name'],
-$_GET['level'],				
-$_GET['hp'],				
-$_GET['mp'],				
-$_GET['atk'],				
-$_GET['def'],
-$_GET['exp'],
-$_GET['hauntlist'](出現地圖清單(\n區分
-$_GET['trophylist'](戰利品清單(\n區分
+$_GET['name'], varchar
+$_GET['level'],	int			
+$_GET['hp'],	int			
+$_GET['mp'],	int			
+$_GET['atk'],	int			
+$_GET['def'], int
+$_GET['exp'], int
+$_GET['hauntlist'](出現地圖清單(輸入名稱，\n區分
+$_GET['trophylist'](戰利品清單(輸入名稱，\n區分
 
 item:
-$_GET['name'],
-$_GET['type'],				
-$_GET['description'],
-$_GET['rewardlist'](會給予的任務獎勵清單(\n區分
-$_GET['trophylist'](會掉落的怪物清單(\n區分
+$_GET['name'],    varchar
+$_GET['type'],		varchar		
+$_GET['description'], varchar
+$_GET['rewardlist'](會給予的任務獎勵清單(輸入名稱，\n區分
+$_GET['trophylist'](會掉落的怪物清單(輸入名稱，\n區分
 
 map:
-$_GET['name'],
-$_GET['area'],
-$_GET['hauntlist'](會出現的怪物清單(\n區分
-$_GET['locatelist'](會出現的npc清單(\n區分
+$_GET['name'],  varchar
+$_GET['area'],  varchar
+$_GET['hauntlist'](會出現的怪物清單(輸入名稱，\n區分
+$_GET['locatelist'](會出現的npc清單(輸入名稱，\n區分
 
 mission:
-$_GET['name'],
-$_GET['type'],				
-$_GET['description'],				
-$_GET['highest_lv'],				
-$_GET['lowest_lv'],				
-$_GET['npc_name'],
-$_GET['rewardlist'](給予的獎勵物品清單(\n區分
+$_GET['name'],  varchar
+$_GET['type'],	int		
+$_GET['description'],		varchar		
+$_GET['highest_lv'],	int			
+$_GET['lowest_lv'],		int		
+$_GET['npc_name'],  varchar
+$_GET['rewardlist'](給予的獎勵物品清單(輸入名稱，\n區分
 
 npc:
-$_GET['name'],
-$_GET['description'],				
-$_GET['imgurl'],
-$_GET['locatelist'](該NPC的出現地圖清單(\n區分
+$_GET['name'],  varchar
+$_GET['description'],		varchar		
+$_GET['imgurl'],  varchar
+$_GET['locatelist'](該NPC的出現地圖清單(輸入名稱，\n區分
 
 profession:
 需要性不高，先不做
