@@ -61,16 +61,16 @@ $_GET['locatelist'](會出現的npc清單(輸入名稱，\n區分
 mission:
 $_GET['name'],  varchar
 $_GET['type'],	int		
-$_GET['description'],		varchar		
-$_GET['highest_lv'],	int			
-$_GET['lowest_lv'],		int		
+$_GET['description'],	varchar		
+$_GET['highest_lv'], int			
+$_GET['lowest_lv'], int		
 $_GET['npc_name'],  varchar
 $_GET['rewardlist'](給予的獎勵物品清單(輸入名稱，\n區分
 
 npc:
-$_GET['name'],  varchar
-$_GET['description'],		varchar		
-$_GET['imgurl'],  varchar
+$_GET['name'], varchar
+$_GET['description'],	varchar		
+$_GET['imgurl'], varchar
 $_GET['locatelist'](該NPC的出現地圖清單(輸入名稱，\n區分
 
 profession:
