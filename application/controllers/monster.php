@@ -49,6 +49,7 @@ class Monster extends CI_Controller
 				'atk' => $_GET['atk'],				
 				'def' => $_GET['def'],
 				'exp' => $_GET['exp'],
+				'imgurl' => $_GET['imgurl'],
 			);
 			if(!empty($_GET['hauntlist'])) {
 				$haunt_id_list = array();

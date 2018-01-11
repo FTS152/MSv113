@@ -23,6 +23,7 @@ class Profession extends CI_Controller
 		echo json_encode($query,JSON_UNESCAPED_UNICODE);
 		$this->load->view('profession_view.php');
 	}
+
 }
 
 ?>

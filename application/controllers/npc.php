@@ -30,6 +30,103 @@ class Npc extends CI_Controller
 		echo json_encode($query,JSON_UNESCAPED_UNICODE);
 		$this->load->view('npc_view.php');
 	}
+//需要將name設為primary key
+	public function add()
+	{
+		if(!$this->session->userdata('username'))
+		{
+			redirect('login/');
+		}
+		else if(!empty($_GET['name']))
+		{
+			$this->load->model('npc_model');
+			$npc_data=array(
+				'name' => $_GET['name'],
+				'description' => $_GET['description'],				
+				'imgurl' => $_GET['imgurl'],
+			);
+			if(!empty($_GET['locatelist'])){
+				$locate_id_list = array();
+				$locate_id_list = $this->npc_model->get_asso($_GET['locatelist'],'map_model');
+			} 
+			$this->db->insert('npc',$npc_data);
+			
+			$npc_id = $this->npc_model->get_id_by_name($_GET['name']);
+			if(!empty($locate_id_list)){
+				foreach ($locate_id_list as $row){
+					$locate_data = array(
+						'npc_id' => $npc_id,
+						'map_id' => $row,
+					);
+					$this->db->insert('npc_location',$locate_data);
+				}
+			}
+
+
+			redirect('npc/');
+
+		}
+		$this->load->view('npc_add.php');
+	}
+
+//未完成功能: 傳預設值至view
+	public function edit()
+	{
+		if(!$this->session->userdata('username'))
+		{
+			redirect('login/');
+		}
+		else if(!empty($_GET['name']))
+		{
+			$this->load->model('npc_model');
+			$npc_data=array(
+				'name' => $_GET['name'],
+				'description' => $_GET['description'],				
+				'imgurl' => $_GET['imgurl'],
+			);
+			if(!empty($_GET['locatelist'])){
+				$locate_id_list = array();
+				$locate_id_list = $this->npc_model->get_asso($_GET['locatelist'],'map_model');
+			} 
+			$this->db->where('id',$_GET['id']);
+			$this->db->update('npc',$npc_data);
+			$this->db->where('npc_id',$_GET['id']);
+			$this->db->delete('npc_location');			
+			if(!empty($locate_id_list)){
+				foreach ($locate_id_list as $row){
+					$locate_data = array(
+						'npc_id' => $_GET['id'],
+						'map_id' => $row,
+					);
+					$this->db->insert('npc_location',$locate_data);
+				}
+			}
+
+
+			redirect('npc/');
+
+		}
+
+		$this->load->view('npc_edit.php');
+	}
+
+	public function delete()
+	{
+		if(!$this->session->userdata('username'))
+		{
+			redirect('login/');
+		}
+		else 
+		{
+			$this->load->model('npc_model');
+			$this->db->where('id',$_GET['id']);
+			$this->db->delete('npc');
+			$this->db->where('npc_id',$_GET['id']);
+			$this->db->delete('npc_location');			
+			redirect('npc/');
+		}
+	}
+
 }
 
 ?>

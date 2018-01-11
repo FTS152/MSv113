@@ -1,13 +1,14 @@
 <?php
-class Map_model extends CI_Model
+class Profession_model extends CI_Model
 {
 	function get_id_by_name($name){
 		$this->db->select('id');
 		$this->db->where('name',$name);
-		$query=$this->db->get('map');
+		$query=$this->db->get('profession');
 		$id = $query->row()->id;
 		return $id;
 	}
+
 	function get_asso($alist,$model){
 		$this->load->model($model);
 		$cutlist = array();
@@ -20,6 +21,5 @@ class Map_model extends CI_Model
 			}
 		return $cut_id_list;
 	}
-	
 }
 ?>

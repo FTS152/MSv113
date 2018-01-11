@@ -26,10 +26,137 @@ class map extends CI_Controller
 		$this->db->join('monster_haunt', 'monster_haunt.monster_id = monster.id');
 		$this->db->join('map', 'monster_haunt.map_id = map.id');
 		$this->db->where('map.id',$_GET['id']);
-		$query_monster=$this->db->get();
-		$query = array_merge($query_data->result(),$query_npc->result(),$query_monster->result());
+		$query_map=$this->db->get();
+		$query = array_merge($query_data->result(),$query_npc->result(),$query_map->result());
 		echo json_encode($query,JSON_UNESCAPED_UNICODE);
 		$this->load->view('map_view.php');
+	}
+
+//需要將name設為primary key
+	public function add()
+	{
+		if(!$this->session->userdata('username'))
+		{
+			redirect('login/');
+		}
+		else if(!empty($_GET['name']))
+		{
+			$this->load->model('map_model');
+			$map_data=array(
+				'name' => $_GET['name'],
+				'area' => $_GET['area'],				
+			);
+			if(!empty($_GET['hauntlist'])) {
+				$haunt_id_list = array();
+				$haunt_id_list = $this->map_model->get_asso($_GET['hauntlist'],'monster_model');
+			}
+			
+			if(!empty($_GET['locatelist'])){
+				$locate_id_list = array();
+				$locate_id_list = $this->map_model->get_asso($_GET['locatelist'],'npc_model');
+			} 
+			$this->db->insert('map',$map_data);
+			
+			$map_id = $this->map_model->get_id_by_name($_GET['name']);
+			if(!empty($haunt_id_list)){
+				foreach ($haunt_id_list as $row){
+					$haunt_data = array(
+						'map_id' => $map_id,
+						'monster_id' => $row,
+					);
+					$this->db->insert('monster_haunt',$haunt_data);
+				}
+			}
+			if(!empty($locate_id_list)){
+				foreach ($locate_id_list as $row){
+					$locate_data = array(
+						'map_id' => $map_id,
+						'npc_id' => $row,
+					);
+					$this->db->insert('npc_location',$trophy_data);
+				}
+			}
+
+
+			redirect('map/');
+
+		}
+		$this->load->view('map_add.php');
+	}
+
+//未完成功能: 傳預設值至view
+	public function edit()
+	{
+		if(!$this->session->userdata('username'))
+		{
+			redirect('login/');
+		}
+		else if(!empty($_GET['name']))
+		{
+			$this->load->model('map_model');
+			$map_data=array(
+				'name' => $_GET['name'],
+				'area' => $_GET['area'],				
+			);
+			if(!empty($_GET['hauntlist'])) {
+				$haunt_id_list = array();
+				$haunt_id_list = $this->map_model->get_asso($_GET['hauntlist'],'monster_model');
+			}
+			
+			if(!empty($_GET['locatelist'])){
+				$locate_id_list = array();
+				$locate_id_list = $this->map_model->get_asso($_GET['locatelist'],'npc_model');
+			} 
+			$this->db->where('id',$_GET['id']);
+			$this->db->update('map',$map_data);
+			$this->db->where('map_id',$_GET['id']);
+			$this->db->delete('monster_haunt');			
+			$this->db->where('map_id',$_GET['id']);
+			$this->db->delete('npc_location');
+			if(!empty($haunt_id_list)){
+				foreach ($haunt_id_list as $row){
+					$haunt_data = array(
+						'map_id' => $_GET['id'],
+						'monster_id' => $row,
+					);
+					$this->db->insert('monster_haunt',$haunt_data);
+				}
+			}
+			if(!empty($locate_id_list)){
+				foreach ($locate_id_list as $row){
+					$locate_data = array(
+						'map_id' => $_GET['id'],
+						'npc_id' => $row,
+					);
+					$this->db->insert('npc_location',$locate_data);
+				}
+			}
+
+
+			redirect('map/');
+
+		}
+
+		$this->load->view('map_edit.php');
+	}
+
+	public function delete()
+	{
+		if(!$this->session->userdata('username'))
+		{
+			redirect('login/');
+		}
+		else 
+		{
+			$this->load->model('map_model');
+			$this->db->where('id',$_GET['id']);
+			$this->db->delete('map');
+			$this->db->where('map_id',$_GET['id']);
+			$this->db->delete('monster_haunt');			
+			$this->db->where('map_id',$_GET['id']);
+			$this->db->delete('npc_location');
+			redirect('map/');
+		}
 	}
 }
 
