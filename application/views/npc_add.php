@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  <p class="title">Monster Add</p>
 <?php
 $attributes = array(
@@ -13,3 +14,8 @@ ImgUrl:<input type="text" name="imgurl">
  <input type="submit" value="add">
 
  </form>
+=======
+<?php
+	echo "hello";
+?>
+>>>>>>> origin/master

@@ -33,7 +33,11 @@
 			<form id="npc_form">
 				<div class="form-group">
 					<select class="form-control" id="npc-loc">
+<<<<<<< HEAD
 						<option>請選擇地區</option>
+=======
+						<option>{{data binding to location list}}</option>
+>>>>>>> origin/master
 					</select>
 				</div>
 			    <div class="form-group">
@@ -66,6 +70,15 @@
 	<div class="container content" id="profession">
 		<div class="row col-sm-3"></div>
 		<div class="row col-sm-6">
+<<<<<<< HEAD
+=======
+			<form id="profession_form">
+			    <div class="form-group">
+					<input type="text" name="name" class="form-control" placeholder="name" value="初心者" style="display: inline-block;">
+					<button class="submit">SUBMIT</button>
+				</div>
+			</form>
+>>>>>>> origin/master
 			<div style="text-align: right">符合條件數量：<span></span></div>
 			<table class="table table-striped">
 			    <thead>
@@ -147,6 +160,7 @@
 		</div>
 	</div>
 </body>
+<<<<<<< HEAD
 </html>
 <script src="js/serializeObject.js"></script>
 <script src="js/index.js"></script>
@@ -154,3 +168,103 @@
 <script>
 
 </script>
+=======
+<script src="././js/serializeObject.js"></script>
+<script src="././js/index.js"></script>
+</html>
+<style>
+.navbar{
+	background: rgb(255, 137, 35);
+	border: none;
+	color: white !important;
+}
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a{
+	color: white;
+}
+.navbar-nav>li:hover{
+	background: rgb(255,223,70);
+}
+.submit{
+	display: inline-block;
+	margin-left: 25px;
+	padding: 5px 7px;
+	width:100px;
+	font-size: 14px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	background-color: rgb(65, 157, 155);
+	color: white;
+	border: none;
+	border-radius: 3px;
+	box-shadow: 4px 3px rgb(175,171,171);
+}
+.submit:hover{
+	background-color: rgb(180, 224, 223);
+	color: rgb(65, 157, 155);
+	box-shadow:  4px 3px rgb(65, 157, 155);
+}
+.submit:active {
+	background-color: rgb(65, 157, 155);
+	color: white;
+	box-shadow: 4px 3px rgb(175,171,171);
+	transform: translateY(2px);
+}
+tbody tr:nth-child(2n+1) {
+	background: rgb(225, 225, 225);
+}
+tbody tr:nth-child(2n+2){
+	background: rgb(240, 240, 240);
+}
+thead, thead>tr>th{
+	text-align: center;
+	text-transform: uppercase;
+	background: rgb(165, 165, 165);
+	color:white;
+	border:2px solid white !important;
+}
+tbody>tr>td:first-child{
+	width:10%;
+	text-align: center;
+	vertical-align: middle;
+	border-width: 2px;
+	border-color: white;
+	border-style: none solid solid none;
+}
+tbody>tr>td:nth-child(2){
+	width:25%;
+	text-align: center;
+	vertical-align: middle;
+	border-width: 2px;
+	border-color: white;
+	border-style: none solid solid none;
+}
+tbody>tr>td:nth-child(3){
+	width:50%;
+	text-align: center;
+	vertical-align: middle;
+	border-width: 2px;
+	border-color: white;
+	border-style: none solid solid none;
+}
+tbody>tr>td:nth-child(4){
+	width:15%;
+	text-align: center;
+	vertical-align: middle;
+	border-width: 2px;
+	border-color: white;
+	border-style: none none solid none;
+}
+tbody>tr>td img{
+	width:50px;
+	height:65px;
+}
+.form-group{
+	margin-left:20%;
+}
+.form-group input, .form-group select{
+	width: 50%;
+}
+</style>
+>>>>>>> origin/master
