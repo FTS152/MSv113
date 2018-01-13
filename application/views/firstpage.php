@@ -40,18 +40,11 @@
 			    <div class="form-group">
 					<input type="text" name="name" class="form-control" placeholder="name" value="流浪" style="display: inline-block;">
 					<button class="submit">SUBMIT</button>
-<<<<<<< HEAD
 					<a href="npc/add/"><div class="add">ADD</div></a>
 				</div>
 			</form>
 			<div style="text-align: right">符合條件數量<span id="npc_count" class="badge"></span></div>
 			<table class="table table-striped result">
-=======
-				</div>
-			</form>
-			<div style="text-align: right">符合條件數量：<span id="npc_count"></span></div>
-			<table class="table table-striped">
->>>>>>> origin/master
 			    <thead>
 			      <tr>
 			        <th>ID</th>
@@ -68,13 +61,8 @@
 	<div class="container content" id="profession">
 		<div class="row col-sm-2"></div>
 		<div class="row col-sm-9">
-<<<<<<< HEAD
 			<div style="text-align: right">符合條件數量<span id="profession_count" class="badge"></span></div>
 			<table class="table table-striped result">
-=======
-			<div style="text-align: right">符合條件數量：<span id="profession_count"></span></div>
-			<table class="table table-striped">
->>>>>>> origin/master
 			    <thead>
 			      <tr>
 			        <th>ID</th>
@@ -96,18 +84,11 @@
 			    	<input type="text" name="area" class="form-control" placeholder="area" value="楓">
 					<input type="text" name="name" class="form-control" placeholder="name" style="display: inline-block;">
 					<button class="submit">SUBMIT</button>
-<<<<<<< HEAD
 					<a href="map/add/"><div class="add">ADD</div></a>
 				</div>
 			</form>
 			<div style="text-align: right">符合條件數量<span id="map_count" class="badge"></span></div>
 			<table class="table table-striped result">
-=======
-				</div>
-			</form>
-			<div style="text-align: right">符合條件數量：<span id="map_count"></span></div>
-			<table class="table table-striped">
->>>>>>> origin/master
 			    <thead>
 			      <tr>
 			        <th>ID</th>
@@ -127,18 +108,11 @@
 			    <div class="form-group">
 					<input type="text" name="name" class="form-control" placeholder="name" value="綠" style="display: inline-block;">
 					<button class="submit">SUBMIT</button>
-<<<<<<< HEAD
 					<a href="monster/add/"><div class="add">ADD</div></a>
 				</div>
 			</form>
 			<div style="text-align: right">符合條件數量<span id="monster_count" class="badge"></span></div>
 			<table class="table table-striped result">
-=======
-				</div>
-			</form>
-			<div style="text-align: right">符合條件數量：<span id="monster_count"></span></div>
-			<table class="table table-striped">
->>>>>>> origin/master
 			    <thead>
 			      <tr>
 			        <th>ID</th>
@@ -165,18 +139,11 @@
 			    	<input type="text" name="level" class="form-control" placeholder="level" value="10">
 					<input type="text" name="name" class="form-control" placeholder="name" style="display: inline-block;">
 					<button class="submit">SUBMIT</button>
-<<<<<<< HEAD
 					<a href="mission/add/"><div class="add">ADD</div></a>
 				</div>
 			</form>
 			<div style="text-align: right">符合條件數量<span id="mission_count" class="badge"></span></div>
 			<table class="table table-striped result">
-=======
-				</div>
-			</form>
-			<div style="text-align: right">符合條件數量：<span id="mission_count"></span></div>
-			<table class="table table-striped">
->>>>>>> origin/master
 			    <thead>
 			      <tr>
 			        <th>ID</th>
@@ -200,18 +167,11 @@
 			    	<input type="text" name="name" class="form-control" placeholder="name" value="黑">
 					<input type="text" name="type" class="form-control" placeholder="type" style="display: inline-block;">
 					<button class="submit">SUBMIT</button>
-<<<<<<< HEAD
 					<a href="item/add/"><div class="add">ADD</div></a>
 				</div>
 			</form>
 			<div style="text-align: right">符合條件數量<span id="item_count" class="badge"></span></div>
 			<table class="table table-striped result">
-=======
-				</div>
-			</form>
-			<div style="text-align: right">符合條件數量：<span id="item_count"></span></div>
-			<table class="table table-striped">
->>>>>>> origin/master
 			    <thead>
 			      <tr>
 			        <th>ID</th>
@@ -228,8 +188,4 @@
 </body>
 </html>
 <script src="js/serializeObject.js"></script>
-<<<<<<< HEAD
 <script src="js/index.js"></script>
-=======
-<script src="js/index.js"></script>
->>>>>>> origin/master
