@@ -8,8 +8,12 @@ class item extends CI_Controller
 		$query=$this->db->get('item');
 		// $data = array( 'data' => $query->result());
 		echo json_encode($query->result(),JSON_UNESCAPED_UNICODE);
+<<<<<<< HEAD
 		// echo var_dump($data);
 		// $this->load->view('item_view.php', $data);
+=======
+		// $this->load->view('item_list.php');
+>>>>>>> origin/master
 	}
 
 	public function view()
