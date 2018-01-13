@@ -50,12 +50,7 @@ class Mission extends CI_Controller
 			$this->load->model('npc_model');
 			$npc_id = $this->npc_model->get_id_by_name($_GET['npc_name']);
 			$mission_data=array(
-<<<<<<< HEAD
 				'name' => $_GET['name'],		
-=======
-				'name' => $_GET['name'],
-				// 'type' => $_GET['type'],				
->>>>>>> origin/master
 				'description' => $_GET['description'],				
 				'highest_lv' => $_GET['highest_lv'],				
 				'lowest_lv' => $_GET['lowest_lv'],				
