@@ -62,15 +62,7 @@ class Npc extends CI_Controller
 					$this->db->insert('npc_location',$locate_data);
 				}
 			}
-
-<<<<<<< HEAD
-			// redirect('firstpage/');
 			redirect('npc/');
-=======
-			redirect('firstpage/');
-			// redirect('npc/');
->>>>>>> origin/master
-
 		}
 		$this->load->view('header.php');
 		$this->load->view('npc_add.php');
