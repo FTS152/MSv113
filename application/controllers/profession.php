@@ -3,9 +3,11 @@ class Profession extends CI_Controller
 {
 	public function index()
 	{
+		// if(!empty($_GET['name']))
+		// 	$this->db->like('name', $_GET['name']);
 		$query=$this->db->get('profession');
 		echo json_encode($query->result(),JSON_UNESCAPED_UNICODE);
-		$this->load->view('profession_list.php');
+		// $this->load->view('profession_list.php');
 	}
 
 	public function view()

@@ -7,7 +7,7 @@ class map extends CI_Controller
 		if(!empty($_GET['area'])) $this->db->like('area',$_GET['area']);
 		$query=$this->db->get('map');
 		echo json_encode($query->result(),JSON_UNESCAPED_UNICODE);
-		$this->load->view('map_list.php');
+		// $this->load->view('map_list.php');
 	}
 
 	public function view()
@@ -81,7 +81,9 @@ class map extends CI_Controller
 			redirect('map/');
 
 		}
+		$this->load->view('header.php');
 		$this->load->view('map_add.php');
+		$this->load->view('footer.php');
 	}
 
 //未完成功能: 傳預設值至view

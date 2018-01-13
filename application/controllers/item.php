@@ -7,7 +7,7 @@ class item extends CI_Controller
 		if(!empty($_GET['type'])) $this->db->like('type',$_GET['type']);
 		$query=$this->db->get('item');
 		echo json_encode($query->result(),JSON_UNESCAPED_UNICODE);
-		$this->load->view('item_list.php');
+		// $this->load->view('item_list.php');
 	}
 
 	public function view()
@@ -81,7 +81,9 @@ class item extends CI_Controller
 			redirect('item/');
 
 		}
+		$this->load->view('header.php');
 		$this->load->view('item_add.php');
+		$this->load->view('footer.php');
 	}
 
 //未完成功能: 傳預設值至view
