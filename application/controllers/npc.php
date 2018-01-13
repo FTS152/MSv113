@@ -63,8 +63,13 @@ class Npc extends CI_Controller
 				}
 			}
 
+<<<<<<< HEAD
 			// redirect('firstpage/');
 			redirect('npc/');
+=======
+			redirect('firstpage/');
+			// redirect('npc/');
+>>>>>>> origin/master
 
 		}
 		$this->load->view('header.php');

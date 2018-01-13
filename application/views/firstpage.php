@@ -29,6 +29,7 @@
 	</nav>
 	
 	<div class="container content" id="npc">
+<<<<<<< HEAD
 		<div class="row col-sm-2"></div>
 		<div class="row col-sm-9">
 			<form id="npc_form">
@@ -37,6 +38,16 @@
 						<option>請選擇地區</option>
 					</select>
 				</div> -->
+=======
+		<div class="row col-sm-3"></div>
+		<div class="row col-sm-6">
+			<form id="npc_form">
+				<div class="form-group">
+					<select class="form-control" id="npc-loc">
+						<option>請選擇地區</option>
+					</select>
+				</div>
+>>>>>>> origin/master
 			    <div class="form-group">
 					<input type="text" name="name" class="form-control" placeholder="name" value="流浪" style="display: inline-block;">
 					<button class="submit">SUBMIT</button>
@@ -58,9 +69,15 @@
 	</div>
 
 	<div class="container content" id="profession">
+<<<<<<< HEAD
 		<div class="row col-sm-2"></div>
 		<div class="row col-sm-9">
 			<div style="text-align: right">符合條件數量：<span id="profession_count"></span></div>
+=======
+		<div class="row col-sm-3"></div>
+		<div class="row col-sm-6">
+			<div style="text-align: right">符合條件數量：<span></span></div>
+>>>>>>> origin/master
 			<table class="table table-striped">
 			    <thead>
 			      <tr>
@@ -70,7 +87,18 @@
 			        <th>母職業</th>
 			      </tr>
 			    </thead>
+<<<<<<< HEAD
 			    <tbody></tbody>
+=======
+			    <tbody>
+			      <!--<tr>
+			        <td>0</td>
+			        <td>測試</td>
+			        <td>測試用NPC</td>
+			        <td><img src="http://s1.heyxus.com/maple/custom/npc/np_a001.gif"></td>
+			      </tr>-->
+			    </tbody>
+>>>>>>> origin/master
 			  </table>
 		</div>
 	</div>
@@ -100,15 +128,24 @@
 	</div>
 
 	<div class="container content" id="monster">
+<<<<<<< HEAD
 		<div class="row col-sm-2"></div>
 		<div class="row col-sm-9">
+=======
+		<div class="row col-sm-3"></div>
+		<div class="row col-sm-8">
+>>>>>>> origin/master
 			<form id="monster_form">
 			    <div class="form-group">
 					<input type="text" name="name" class="form-control" placeholder="name" value="綠" style="display: inline-block;">
 					<button class="submit">SUBMIT</button>
 				</div>
 			</form>
+<<<<<<< HEAD
 			<div style="text-align: right">符合條件數量：<span id="monster_count"></span></div>
+=======
+			<div style="text-align: right">符合條件數量：<span></span></div>
+>>>>>>> origin/master
 			<table class="table table-striped">
 			    <thead>
 			      <tr>
@@ -123,7 +160,24 @@
 			        <th>圖片</th>
 			      </tr>
 			    </thead>
+<<<<<<< HEAD
 			    <tbody></tbody>
+=======
+			    <tbody>
+			   <!--    <tr>
+			        <td style="width:7.5%">1</td>
+			        <td style="width:15%">木箱子</td>
+			        <td style="width:10%">0</td>
+			        <td style="width:10%">4</td>
+			        <td style="width:10%">0</td>
+			        <td style="width:10%">0</td>
+			        <td style="width:10%">0</td>
+			        <td style="width:12.5%">0</td>
+			        <td style="width:15%"><img src="http:\/\/s6.heyxus.com\/maple\/custom\/monster\/large\/mo000001.gif"></td>
+			      </tr> -->
+			      <!-- "id":"1","name":"木箱子","lv":"0","hp":"4","mp":"0","atk":"0","def":"0","exp":"0","imgurl":"http:\/\/s6.heyxus.com\/maple\/custom\/monster\/large\/mo000001.gif" -->
+			    </tbody>
+>>>>>>> origin/master
 			  </table>
 		</div>
 	</div>
@@ -182,5 +236,12 @@
 
 </body>
 </html>
+<<<<<<< HEAD
 <script src="js/serializeObject.js"></script>
 <script src="js/index.js"></script>
+=======
+
+<script src="js/serializeObject.js"></script>
+<script src="js/index.js"></script>
+<link rel="stylesheet" href="js/style.css">
+>>>>>>> origin/master
