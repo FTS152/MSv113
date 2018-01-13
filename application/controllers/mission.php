@@ -10,7 +10,7 @@ class Mission extends CI_Controller
 		if(!empty($_GET['name'])) $this->db->like('name',$_GET['name']);
 		$query=$this->db->get('mission');
 		echo json_encode($query->result(),JSON_UNESCAPED_UNICODE);
-		$this->load->view('mission_list.php');
+		// $this->load->view('mission_list.php');
 	}
 
 	public function view()
@@ -30,8 +30,11 @@ class Mission extends CI_Controller
 		$this->db->where('mission.id',$_GET['id']);
 		$query_reward=$this->db->get();
 		$query=array_merge($query_data->result(),$query_npc->result(),$query_reward->result());
-		echo json_encode($query,JSON_UNESCAPED_UNICODE);
-		$this->load->view('mission_view.php');
+		$data = array('data' => $query);
+
+		$this->load->view('header.php');
+		$this->load->view('mission_view.php',$data);
+		$this->load->view('footer.php');
 	}
 
 //需要將name設為primary key
@@ -48,7 +51,7 @@ class Mission extends CI_Controller
 			$npc_id = $this->npc_model->get_id_by_name($_GET['npc_name']);
 			$mission_data=array(
 				'name' => $_GET['name'],
-				'type' => $_GET['type'],				
+				// 'type' => $_GET['type'],				
 				'description' => $_GET['description'],				
 				'highest_lv' => $_GET['highest_lv'],				
 				'lowest_lv' => $_GET['lowest_lv'],				
@@ -76,7 +79,9 @@ class Mission extends CI_Controller
 			redirect('mission/');
 
 		}
+		$this->load->view('header.php');
 		$this->load->view('mission_add.php');
+		$this->load->view('footer.php');
 	}
 
 //未完成功能: 傳預設值至view
@@ -139,7 +144,7 @@ class Mission extends CI_Controller
 			$this->db->delete('mission');
 			$this->db->where('mission_id',$_GET['id']);
 			$this->db->delete('reward');			
-			redirect('mission/');
+			redirect('firstpage/');
 		}
 	}
 }

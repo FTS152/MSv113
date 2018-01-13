@@ -7,7 +7,7 @@ class map extends CI_Controller
 		if(!empty($_GET['area'])) $this->db->like('area',$_GET['area']);
 		$query=$this->db->get('map');
 		echo json_encode($query->result(),JSON_UNESCAPED_UNICODE);
-		$this->load->view('map_list.php');
+		// $this->load->view('map_list.php');
 	}
 
 	public function view()
@@ -28,8 +28,11 @@ class map extends CI_Controller
 		$this->db->where('map.id',$_GET['id']);
 		$query_map=$this->db->get();
 		$query = array_merge($query_data->result(),$query_npc->result(),$query_map->result());
-		echo json_encode($query,JSON_UNESCAPED_UNICODE);
-		$this->load->view('map_view.php');
+		$data = array('data' => $query);
+		// echo var_dump($query);
+		$this->load->view('header.php');
+		$this->load->view('map_view.php', $data);
+		$this->load->view('footer.php');
 	}
 
 //需要將name設為primary key
@@ -81,7 +84,9 @@ class map extends CI_Controller
 			redirect('map/');
 
 		}
+		$this->load->view('header.php');
 		$this->load->view('map_add.php');
+		$this->load->view('footer.php');
 	}
 
 //未完成功能: 傳預設值至view
@@ -155,7 +160,7 @@ class map extends CI_Controller
 			$this->db->delete('monster_haunt');			
 			$this->db->where('map_id',$_GET['id']);
 			$this->db->delete('npc_location');
-			redirect('map/');
+			redirect('firstpage/');
 		}
 	}
 }
