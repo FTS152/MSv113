@@ -1,23 +1,39 @@
-<p class="title">Monster Add</p>
-<?php
-$attributes = array(
-	'id' => 'add',
-	'name' => 'add',
-	'method' => 'GET'
-);
-echo form_open('monster/add/',$attributes);
-?>
-Name:<input type="text" name="name" size="8">
-Level:<input type="text" name="level" size="8">
-Hp:<input type="text" name="hp" size="8">
-Mp:<input type="text" name="mp" size="8">
-Atk:<input type="text" name="atk" size="8">
-Def:<input type="text" name="def" size="8">
-Exp:<input type="text" name="exp" size="8">
-<div>
-Haunt list :<textarea name="hauntlist" rows="15" cols="50"></textarea>
-<div>
-Trophy list :<textarea name="trophylist" rows="15" cols="50"></textarea>
- <input type="submit" value="add">
-
- </form>
+<form style="width:33.33%; margin-left:33.33%;margin-bottom: 50px">
+	<div class="form-group">
+		<label for="name">怪獸名稱: </label>
+		<input type="text" class="form-control" name="name" size="8">
+	</div>
+	<div class="form-group">
+		<label for="level">等級: </label>
+		<input type="text" class="form-control" name="level" size="8">
+	</div>
+	<div class="form-group">
+		<label for="hp">血量: </label>
+		<input type="text" class="form-control" name="hp" size="8">
+	</div>
+	<div class="form-group">
+		<label for="mp">魔量: </label>
+		<input type="text" class="form-control" name="mp" size="8">
+	</div>
+	<div class="form-group">
+		<label for="atk">攻擊: </label>
+		<input type="text" class="form-control" name="atk" size="8">
+	</div>
+	<div class="form-group">
+		<label for="def">防守: </label>
+		<input type="text" class="form-control" name="def" size="8">
+	</div>
+	<div class="form-group">
+		<label for="exp">經驗值: </label>
+		<input type="text" class="form-control" name="exp" size="8">
+	</div>
+	<div class="form-group">
+		<label for="hauntlist">Haunt List: </label>
+		<textarea name="hauntlist" rows="5" cols="50" class="form-control"></textarea>
+	</div>
+	<div class="form-group">
+		<label for="trophylist">Trophy List: </label>
+		<textarea name="trophylist" rows="5" cols="50" class="form-control"></textarea>
+	</div>
+	<button class="submit">SUBMIT</button>
+</form>

@@ -3,10 +3,11 @@ class Monster extends CI_Controller
 {
 	public function index()
 	{
-		if(!empty($_GET['name'])) $this->db->like('name',$_GET['name']);
+		if(!empty($_GET['name']))
+			$this->db->like('name',$_GET['name']);
 		$query=$this->db->get('monster');
 		echo json_encode($query->result(),JSON_UNESCAPED_UNICODE);
-		$this->load->view('monster_list.php');
+		// $this->load->view('monster_list.php');
 	}
 
 	public function view()
@@ -28,7 +29,7 @@ class Monster extends CI_Controller
 		$query_trophy=$this->db->get();
 		$query=array_merge($query_data->result(),$query_haunt->result(),$query_trophy->result());
 		echo json_encode($query,JSON_UNESCAPED_UNICODE);
-		$this->load->view('monster_view.php');
+		// $this->load->view('monster_view.php');
 	}
 
 //需要將name設為primary key
@@ -86,7 +87,9 @@ class Monster extends CI_Controller
 			redirect('monster/');
 
 		}
+		$this->load->view('header.php');
 		$this->load->view('monster_add.php');
+		$this->load->view('footer.php');
 	}
 
 //未完成功能: 傳預設值至view
