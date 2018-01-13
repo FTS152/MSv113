@@ -27,17 +27,11 @@ class Npc extends CI_Controller
 		$this->db->where('npc.id',$_GET['id']);		
 		$query_mission=$this->db->get();
 		$query=array_merge($query_data->result(),$query_location->result(),$query_mission->result());
-<<<<<<< HEAD
 		$data = array('data' => $query);
 
 		$this->load->view('header.php');
 		$this->load->view('npc_view.php', $data);
 		$this->load->view('footer.php');
-=======
-		echo json_encode($query,JSON_UNESCAPED_UNICODE);
-		// $this->load->view('npc_view.php');
-		// $this->load->view('firstpage');
->>>>>>> origin/master
 	}
 //需要將name設為primary key
 	public function add()
@@ -70,12 +64,10 @@ class Npc extends CI_Controller
 					$this->db->insert('npc_location',$locate_data);
 				}
 			}
-<<<<<<< HEAD
 
 			// redirect('firstpage/');
-=======
->>>>>>> origin/master
 			redirect('npc/');
+
 		}
 		$this->load->view('header.php');
 		$this->load->view('npc_add.php');
