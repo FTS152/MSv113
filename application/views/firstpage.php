@@ -188,8 +188,4 @@
 </body>
 </html>
 <script src="js/serializeObject.js"></script>
-<<<<<<< HEAD
 <script src="js/index.js"></script>
-=======
-<script src="js/index.js"></script>
->>>>>>> origin/master
