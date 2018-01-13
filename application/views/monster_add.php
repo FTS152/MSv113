@@ -35,9 +35,5 @@
 		<label for="trophylist">Trophy List: </label>
 		<textarea name="trophylist" rows="5" cols="50" class="form-control"></textarea>
 	</div>
-<<<<<<< HEAD
 	<button class="submit" style="margin-left:37.5%">SUBMIT</button>
-=======
-	<button class="submit">SUBMIT</button>
->>>>>>> origin/master
 </form>
