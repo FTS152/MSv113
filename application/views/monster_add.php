@@ -36,8 +36,4 @@
 		<textarea name="trophylist" rows="5" cols="50" class="form-control"></textarea>
 	</div>
 	<button class="submit" style="margin-left:37.5%">SUBMIT</button>
-<<<<<<< HEAD
 </form>
-=======
-</form>
->>>>>>> origin/master
