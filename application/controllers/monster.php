@@ -28,16 +28,11 @@ class Monster extends CI_Controller
 		$this->db->where('monster.id',$_GET['id']);
 		$query_trophy=$this->db->get();
 		$query=array_merge($query_data->result(),$query_haunt->result(),$query_trophy->result());
-<<<<<<< HEAD
 		$data = array('data' => $query);
 		// echo var_dump($query);
 		$this->load->view('header.php');
 		$this->load->view('monster_view.php', $data);
 		$this->load->view('footer.php');
-=======
-		echo json_encode($query,JSON_UNESCAPED_UNICODE);
-		// $this->load->view('monster_view.php');
->>>>>>> origin/master
 	}
 
 //需要將name設為primary key
