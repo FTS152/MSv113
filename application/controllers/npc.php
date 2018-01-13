@@ -65,10 +65,6 @@ class Npc extends CI_Controller
 				}
 			}
 
-<<<<<<< HEAD
-=======
-			// redirect('firstpage/');
->>>>>>> origin/master
 			redirect('npc/');
 
 		}
