@@ -1,0 +1,106 @@
+body{
+	font-family: Microsoft JhengHei;
+	font-size:16px;
+}
+.navbar{
+	background: rgb(255, 137, 35);
+	border: none;
+	color: white !important;
+}
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a{
+	color: white;
+}
+.navbar-nav>li:hover{
+	background: rgb(255,223,70);
+}
+.submit{
+	display: inline-block;
+	margin-left: 25px;
+	padding: 5px 7px;
+	width:100px;
+	font-size: 14px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	background-color: rgb(65, 157, 155);
+	color: white;
+	border: none;
+	border-radius: 3px;
+	box-shadow: 4px 3px rgb(175,171,171);
+}
+.submit:hover{
+	background-color: rgb(180, 224, 223);
+	color: rgb(65, 157, 155);
+	box-shadow:  4px 3px rgb(65, 157, 155);
+}
+.submit:active {
+	background-color: rgb(65, 157, 155);
+	color: white;
+	box-shadow: 4px 3px rgb(175,171,171);
+	transform: translateY(2px);
+}
+.add{
+	display: inline-block;
+	margin-left: 25px;
+	padding: 5px 7px;
+	width:100px;
+	font-size: 14px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	background-color: rgb(243, 129, 129);
+	color: white;
+	border: none;
+	border-radius: 3px;
+	box-shadow: 4px 3px rgb(175,171,171);
+}
+.add:hover{
+	background-color: rgb(255, 188, 188);
+	color: rgb(243, 129, 129);
+	box-shadow:  4px 3px rgb(243, 129, 129);
+}
+.add:active {
+	background-color: rgb(243, 129, 129);
+	color: white;
+	box-shadow: 4px 3px rgb(175,171,171);
+	transform: translateY(2px);
+}
+.result tbody tr:nth-child(2n+1) {
+	background: rgb(225, 225, 225);
+}
+.result tbody tr:nth-child(2n+2){
+	background: rgb(240, 240, 240);
+}
+.result thead, .result thead>tr>th{
+	text-align: center;
+	text-transform: uppercase;
+	background: rgb(165, 165, 165);
+	color:white;
+	border:2px solid white !important;
+}
+.result>tbody>tr>td{
+	text-align: center;
+	vertical-align: middle;
+	cursor:pointer;
+	border-width: 2px;
+	border-color: white;
+	border-style: none solid solid none;
+}
+.result>tbody>tr:hover{
+	background:rgb(255, 255, 194);
+}
+.result>tbody>tr>td img{
+	width:50px;
+	height:65px;
+}
+.content{
+	display:none;
+}
+.content .form-group{
+	margin-left:20%;
+}
+.content .form-group input, .content .form-group select{
+	width: 50%;
+}

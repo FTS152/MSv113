@@ -3,10 +3,11 @@ class Monster extends CI_Controller
 {
 	public function index()
 	{
-		if(!empty($_GET['name'])) $this->db->like('name',$_GET['name']);
+		if(!empty($_GET['name']))
+			$this->db->like('name',$_GET['name']);
 		$query=$this->db->get('monster');
 		echo json_encode($query->result(),JSON_UNESCAPED_UNICODE);
-		$this->load->view('monster_list.php');
+		// $this->load->view('monster_list.php');
 	}
 
 	public function view()
@@ -27,8 +28,11 @@ class Monster extends CI_Controller
 		$this->db->where('monster.id',$_GET['id']);
 		$query_trophy=$this->db->get();
 		$query=array_merge($query_data->result(),$query_haunt->result(),$query_trophy->result());
-		echo json_encode($query,JSON_UNESCAPED_UNICODE);
-		$this->load->view('monster_view.php');
+		$data = array('data' => $query);
+		// echo var_dump($query);
+		$this->load->view('header.php');
+		$this->load->view('monster_view.php', $data);
+		$this->load->view('footer.php');
 	}
 
 //需要將name設為primary key
@@ -86,7 +90,9 @@ class Monster extends CI_Controller
 			redirect('monster/');
 
 		}
+		$this->load->view('header.php');
 		$this->load->view('monster_add.php');
+		$this->load->view('footer.php');
 	}
 
 //未完成功能: 傳預設值至view
@@ -143,11 +149,30 @@ class Monster extends CI_Controller
 			}
 
 
-			redirect('monster/');
+			redirect('firstpage/');
 
 		}
+		//這段都是從view複製過來的，用來匯入資料
+		$this->db->where('monster.id',$_GET['id']);
+		$query_data= $this->db->get('monster');
+		$this->db->select('monster_haunt.map_id,map.name');
+		$this->db->from('map');
+		$this->db->join('monster_haunt', 'monster_haunt.map_id = map.id');
+		$this->db->join('monster', 'monster_haunt.monster_id = monster.id');		
+		$this->db->where('monster.id',$_GET['id']);
+		$query_haunt=$this->db->get();
+		$this->db->select('monster_trophy.item_id,item.name');
+		$this->db->from('item');
+		$this->db->join('monster_trophy', 'monster_trophy.item_id = item.id');
+		$this->db->join('monster', 'monster_trophy.monster_id = monster.id');		
+		$this->db->where('monster.id',$_GET['id']);
+		$query_trophy=$this->db->get();
+		$query=array_merge($query_data->result(),$query_haunt->result(),$query_trophy->result());
+		$data = array('data' => $query);
 
-		$this->load->view('monster_edit.php');
+		$this->load->view('header.php');
+		$this->load->view('monster_edit.php', $data);
+		$this->load->view('footer.php');
 	}
 
 	public function delete()
@@ -165,7 +190,7 @@ class Monster extends CI_Controller
 			$this->db->delete('monster_haunt');			
 			$this->db->where('monster_id',$_GET['id']);
 			$this->db->delete('monster_trophy');
-			redirect('monster/');
+			redirect('firstpage/');
 		}
 	}
 }

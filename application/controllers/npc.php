@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: application/json; charset=UTF-8');
+
 class Npc extends CI_Controller
 {
 	public function index()
@@ -27,8 +27,11 @@ class Npc extends CI_Controller
 		$this->db->where('npc.id',$_GET['id']);		
 		$query_mission=$this->db->get();
 		$query=array_merge($query_data->result(),$query_location->result(),$query_mission->result());
-		echo json_encode($query,JSON_UNESCAPED_UNICODE);
-		$this->load->view('npc_view.php');
+		$data = array('data' => $query);
+
+		$this->load->view('header.php');
+		$this->load->view('npc_view.php', $data);
+		$this->load->view('footer.php');
 	}
 //需要將name設為primary key
 	public function add()
@@ -62,11 +65,12 @@ class Npc extends CI_Controller
 				}
 			}
 
-
 			redirect('npc/');
 
 		}
+		$this->load->view('header.php');
 		$this->load->view('npc_add.php');
+		$this->load->view('footer.php');
 	}
 
 //未完成功能: 傳預設值至view
@@ -103,11 +107,30 @@ class Npc extends CI_Controller
 			}
 
 
-			redirect('npc/');
+			redirect('firstpage/');
 
 		}
 
-		$this->load->view('npc_edit.php');
+		//這段都是從view複製過來的，用來匯入資料
+		$this->db->where('npc.id',$_GET['id']);
+		$query_data= $this->db->get('npc');
+		$this->db->select('npc_location.map_id,map.name');
+		$this->db->from('map');
+		$this->db->join('npc_location', 'npc_location.map_id = map.id');
+		$this->db->join('npc', 'npc_location.npc_id = npc.id');		
+		$this->db->where('npc.id',$_GET['id']);
+		$query_location=$this->db->get();
+		$this->db->select('mission.npc_id,mission.name');
+		$this->db->from('mission');
+		$this->db->join('npc', 'mission.npc_id = npc.id');
+		$this->db->where('npc.id',$_GET['id']);		
+		$query_mission=$this->db->get();
+		$query=array_merge($query_data->result(),$query_location->result(),$query_mission->result());
+		$data = array('data' => $query);
+
+		$this->load->view('header.php');
+		$this->load->view('npc_edit.php', $data);
+		$this->load->view('footer.php');
 	}
 
 	public function delete()
@@ -123,7 +146,7 @@ class Npc extends CI_Controller
 			$this->db->delete('npc');
 			$this->db->where('npc_id',$_GET['id']);
 			$this->db->delete('npc_location');			
-			redirect('npc/');
+			redirect('firstpage/');
 		}
 	}
 

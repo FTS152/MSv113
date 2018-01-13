@@ -6,8 +6,10 @@ class item extends CI_Controller
 		if(!empty($_GET['name'])) $this->db->like('name',$_GET['name']);
 		if(!empty($_GET['type'])) $this->db->like('type',$_GET['type']);
 		$query=$this->db->get('item');
+		// $data = array( 'data' => $query->result());
 		echo json_encode($query->result(),JSON_UNESCAPED_UNICODE);
-		$this->load->view('item_list.php');
+		// echo var_dump($data);
+		// $this->load->view('item_view.php', $data);
 	}
 
 	public function view()
@@ -28,8 +30,11 @@ class item extends CI_Controller
 		$this->db->where('item.id',$_GET['id']);
 		$query_monster=$this->db->get();
 		$query=array_merge($query_data->result(),$query_mission->result(),$query_monster->result());
-		echo json_encode($query,JSON_UNESCAPED_UNICODE);
-		$this->load->view('item_view.php');
+		$data = array('data' => $query);
+
+		$this->load->view('header.php');
+		$this->load->view('item_view.php', $data);
+		$this->load->view('footer.php');
 	}
 
 	public function add()
@@ -81,7 +86,9 @@ class item extends CI_Controller
 			redirect('item/');
 
 		}
+		$this->load->view('header.php');
 		$this->load->view('item_add.php');
+		$this->load->view('footer.php');
 	}
 
 //未完成功能: 傳預設值至view
@@ -135,11 +142,31 @@ class item extends CI_Controller
 			}
 
 
-			redirect('item/');
+			redirect('firstpage/');
 
 		}
 
-		$this->load->view('item_edit.php');
+		//這段都是從view複製過來的，用來匯入資料
+		$this->db->where('item.id',$_GET['id']);
+		$query_data= $this->db->get('item');
+		$this->db->select('reward.mission_id,mission.name');
+		$this->db->from('mission');
+		$this->db->join('reward', 'reward.mission_id = mission.id');		
+		$this->db->join('item', 'reward.item_id = item.id');
+		$this->db->where('item.id',$_GET['id']);
+		$query_mission=$this->db->get();
+		$this->db->select('monster_trophy.monster_id,monster.name');
+		$this->db->from('monster');
+		$this->db->join('monster_trophy', 'monster_trophy.monster_id = monster.id');		
+		$this->db->join('item', 'monster_trophy.item_id = item.id');
+		$this->db->where('item.id',$_GET['id']);
+		$query_monster=$this->db->get();
+		$query=array_merge($query_data->result(),$query_mission->result(),$query_monster->result());
+		$data = array('data' => $query);
+
+		$this->load->view('header.php');
+		$this->load->view('item_edit.php', $data);
+		$this->load->view('footer.php');
 	}
 
 	public function delete()
@@ -157,7 +184,7 @@ class item extends CI_Controller
 			$this->db->delete('reward');			
 			$this->db->where('item_id',$_GET['id']);
 			$this->db->delete('monster_trophy');
-			redirect('item/');
+			redirect('firstpage/');
 		}
 	}
 }
