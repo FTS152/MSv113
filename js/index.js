@@ -1,33 +1,16 @@
-<<<<<<< HEAD
 var activeContent = "#npc";
 $(activeContent).show();
 count_tr(activeContent);
 
 function count_tr(activeContent){
 	//計算目前表格有幾列
-=======
-// $( document ).ready(function() {
-	var activeContent = "#npc";
-	$(activeContent).show();
-	count_tr(activeContent);
-	// $(activeContent).show();
-
-function count_tr(activeContent){
->>>>>>> origin/master
 	var count_rows = activeContent + " tbody tr";
 	var count_display = activeContent + "_count";
 	var temp  = $(count_rows).length;
 	$(count_display).text(temp);
-<<<<<<< HEAD
 }
 $(".navbar li").click(function(){
 	//點擊導引列，出現相對應的表格畫面
-=======
-	console.log(temp);
-}
-$(".navbar li").click(function(){
-	//display the table
->>>>>>> origin/master
 	$(activeContent).hide();
 	var id = $(this).attr('id');
 	switch(id[2]){
@@ -40,7 +23,6 @@ $(".navbar li").click(function(){
 	}
 	$(activeContent).show();
 	count_tr(activeContent);
-<<<<<<< HEAD
 });
 $(document).ready(function(){
 	$(".result tbody").on("click", "tr", function(e){
@@ -126,84 +108,6 @@ $("#mission button.submit").click(function(){
 	});
 	return false;
 });
-=======
-});
-// });
-
-//查詢npc
-$("#npc button.submit").click(function(){
-	$.ajax({
-		type: 'GET',
-		url: 'npc?name=' + $("#npc_form input").val(),
-		success: function(data){
-			var target = $("#npc table tbody tr").remove();
-			for(index in data){
-				$("#npc table tbody").append("<tr>"
-					+ "<td style='width:10%'>" + data[index].id + "</td>"
-	        		+ "<td style='width:25%'>" + data[index].name + "</td>"
-	        		+ "<td style='width:50%'>" + data[index].description + "</td>"
-	        		+ "<td style-'width:15%'><img src=" + data[index].imgurl + "></td></tr>");
-			}
-			count_tr(activeContent);
-		},
-		contentType: "application/json",
-		dataType: 'JSON'
-	});
-	return false;
-});
-//查詢monster
-$("#monster button.submit").click(function(){
-	$.ajax({
-		type: 'GET',
-		url: 'monster?name=' + $("#monster_form input").val(),
-		success: function(data){
-			var target = $("#monster table tbody tr").remove();
-			for(index in data){
-				if(data[index].imgurl === null) data[index].imgurl = "http:\/\/s6.heyxus.com\/maple\/custom\/monster\/large\/mo000001.gif";
-				$("#monster table tbody").append("<tr>"
-					+ '<td style="width:7.5%">' + data[index].id + '</td>'
-		        	+ '<td style="width:15%">' + data[index].name + '</td>'
-		        	+ '<td style="width:10%">' + data[index].lv + '</td>'
-		        	+ '<td style="width:10%">' + data[index].hp + '</td>'
-		        	+ '<td style="width:10%">' + data[index].mp + '</td>'
-		        	+ '<td style="width:10%">' + data[index].atk + '</td>'
-		       		+ '<td style="width:10%">' + data[index].def + '</td>'
-		        	+ '<td style="width:12.5%">' + data[index].exp + '</td>'
-		        	+ '<td style="width:15%"><img src="' + data[index].imgurl + '" style="width:50px; height:50px"></td></tr>');
-			}
-			count_tr(activeContent);
-		},
-		contentType: "application/json",
-		dataType: 'JSON'
-	});
-	return false;
-});
-//查詢mission
-$("#mission button.submit").click(function(){
-	$.ajax({
-		type: 'GET',
-		url: 'mission?level=' + $("#mission_form input[name='level']").val() + "&name=" + $("#mission_form input[name='name']").val(),
-		success: function(data){
-			var target = $("#mission table tbody tr").remove();
-			for(index in data){
-				if(data[index].highest_lv == 0) data[index].highest_lv = "N/A";
-				$("#mission table tbody").append("<tr>"
-					+ "<td style='width:5%'>" + data[index].id + "</td>"
-			        + "<td style='width:22.5%'>" + data[index].name + "</td>"
-			        + "<td style='width:37.5%'>" + data[index].description + "</td>"
-			        + "<td style='width:10%'>" + data[index].lowest_lv + "</td>"
-			        + "<td style='width:10%'>" + data[index].highest_lv + "</td>"
-			        + "<td style='width:15%'>" + data[index].npc_id + "</td></tr>");
-			}
-			count_tr(activeContent);
-		},
-		error: function (jqXHR, exception) {console.log(exception);console.log(jqXHR);},
-		contentType: "application/json",
-		dataType: 'JSON'
-	});
-	return false;
-});
->>>>>>> origin/master
 //查詢item
 $("#item button.submit").click(function(){
 	$.ajax({
@@ -307,7 +211,6 @@ $.ajax({
 	       		+ '<td style="width:10%">' + data[index].def + '</td>'
 	        	+ '<td style="width:12.5%">' + data[index].exp + '</td>'
 	        	+ '<td style="width:15%"><img src="' + data[index].imgurl + '" style="width:50px; height:50px"></td></tr>');
-<<<<<<< HEAD
 		}
 		count_tr("#monster");
 	},
@@ -332,67 +235,6 @@ $.ajax({
 		        + "<td style='width:15%'>" + data[index].npc_id + "</td></tr>");
 		}
 		count_tr("#mission");
-	},
-	error: function (jqXHR, exception) {console.log(exception);console.log(jqXHR);},
-	contentType: "application/json",
-	dataType: 'JSON'
-});
-//讓起始畫面可以load所有的任務
-$.ajax({
-	type:'GET',
-	url: 'item',
-	data: JSON.stringify(""),
-	success: function(data){
-		for(index in data){
-			$("#item table tbody").append("<tr>"
-				+ "<td style='width:10%'>" + data[index].id + "</td>"
-		        + "<td style='width:20%'>" + data[index].name + "</td>"
-		        + "<td style='width:20%'>" + data[index].type + "</td>"
-		        + "<td style='width:50%'>" + data[index].description + "</td></tr>");
-		}
-		count_tr("#item");
-=======
-		}
-		count_tr("#monster");
->>>>>>> origin/master
-	},
-	error: function (jqXHR, exception) {console.log(exception);console.log(jqXHR);},
-	contentType: "application/json",
-	dataType: 'JSON'
-});
-<<<<<<< HEAD
-//讓起始畫面可以load所有的地圖
-$.ajax({
-	type:'GET',
-	url: 'map',
-	data: JSON.stringify(""),
-	success: function(data){
-		for(index in data){
-			$("#map table tbody").append("<tr>"
-				+ "<td style='width:10%'>" + data[index].id + "</td>"
-		        + "<td style='width:45%'>" + data[index].area + "</td>"
-		        + "<td style='width:45%'>" + data[index].name + "</td></tr>");
-		}
-		count_tr("#map");
-=======
-//讓起始畫面可以load所有的任務
-$.ajax({
-	type:'GET',
-	url: 'mission',
-	data: JSON.stringify(""),
-	success: function(data){
-		for(index in data){
-			if(data[index].highest_lv == 0) data[index].highest_lv = "N/A";
-			$("#mission table tbody").append("<tr>"
-				+ "<td style='width:5%'>" + data[index].id + "</td>"
-		        + "<td style='width:22.5%'>" + data[index].name + "</td>"
-		        + "<td style='width:37.5%'>" + data[index].description + "</td>"
-		        + "<td style='width:10%'>" + data[index].lowest_lv + "</td>"
-		        + "<td style='width:10%'>" + data[index].highest_lv + "</td>"
-		        + "<td style='width:15%'>" + data[index].npc_id + "</td></tr>");
-		}
-		count_tr("#mission");
->>>>>>> origin/master
 	},
 	error: function (jqXHR, exception) {console.log(exception);console.log(jqXHR);},
 	contentType: "application/json",
