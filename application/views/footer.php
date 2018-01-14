@@ -1,4 +1,5 @@
 </body>
+<<<<<<< HEAD
 </html>
 <script>
 $(document).ready(function(){
@@ -10,3 +11,9 @@ $(document).ready(function(){
 	});
 });
 </script>
+=======
+<script src="js/serializeObject.js"></script>
+<script src="js/index.js"></script>
+<link rel="stylesheet" href="js/style.css">
+</html>
+>>>>>>> origin/master

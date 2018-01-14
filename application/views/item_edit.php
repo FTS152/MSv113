@@ -12,6 +12,7 @@
 	</div>
 	<div class="form-group">
 		<label for="description">道具敘述: </label>
+<<<<<<< HEAD
 		<textarea name="description" rows="5" cols="50" class="form-control"><?php echo $data[0]->{'description'}; ?></textarea>
 	</div>
 	<div class="form-group">
@@ -21,6 +22,17 @@
 	<div class="form-group">
 		<label for="trophylist">掉落怪物: </label>
 		<textarea name="trophylist" rows="5" cols="50" class="form-control"><?php foreach($data as $value): ?><?php if(property_exists($value, 'monster_id'))echo $value->{'name'}."\n";?><?php endforeach; ?></textarea>
+=======
+		<textarea name="description" rows="5" cols="50" class="form-control"> value=<?php echo $data[0]->{'description'}; ?></textarea>
+	</div>
+	<div class="form-group">
+		<label for="rewardlist">Reward List: </label>
+		<textarea name="hauntlist" rows="5" cols="50" class="form-control"></textarea>
+	</div>
+	<div class="form-group">
+		<label for="trophylist">Trophy List: </label>
+		<textarea name="trophylist" rows="5" cols="50" class="form-control"></textarea>
+>>>>>>> origin/master
 	</div>
 	<button class="submit" style="margin-left:37.5%">SUBMIT</button>
 </form>

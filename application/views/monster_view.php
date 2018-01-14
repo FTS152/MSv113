@@ -30,6 +30,7 @@
 				</table>
 			</div>
 		</div>
+<<<<<<< HEAD
 		
 		<div class="panel panel-warning">
 			<div class="panel-heading">出沒地點</div>
@@ -63,3 +64,15 @@
 		</div>
 	</div>
 </div>
+=======
+		<div class="panel panel-warning">
+			<div class="panel-heading">出沒地點</div>
+  			<div class="panel-body">這裡會放常出沒的地點~ 按了可以連到地圖</div>
+		</div>
+		<div class="panel panel-warning">
+			<div class="panel-heading">掉落道具</div>
+  			<div class="panel-body">這裡會放怪獸會掉落的道具~ 按了可以連到道具的介紹頁</div>
+		</div>
+	</div>
+</div>
+>>>>>>> origin/master

@@ -6,11 +6,18 @@ class item extends CI_Controller
 		if(!empty($_GET['name'])) $this->db->like('name',$_GET['name']);
 		if(!empty($_GET['type'])) $this->db->like('type',$_GET['type']);
 		$query=$this->db->get('item');
+<<<<<<< HEAD
 		$data = array('data' => $query->result());
 
 		$this->load->view('header.php');
 		$this->load->view('item_list.php', $data);
 		$this->load->view('footer.php');
+=======
+		// $data = array( 'data' => $query->result());
+		echo json_encode($query->result(),JSON_UNESCAPED_UNICODE);
+		// echo var_dump($data);
+		// $this->load->view('item_view.php', $data);
+>>>>>>> origin/master
 	}
 
 	public function view()
@@ -32,7 +39,11 @@ class item extends CI_Controller
 		$query_monster=$this->db->get();
 		$query=array_merge($query_data->result(),$query_mission->result(),$query_monster->result());
 		$data = array('data' => $query);
+<<<<<<< HEAD
 		// echo var_dump($data);
+=======
+
+>>>>>>> origin/master
 		$this->load->view('header.php');
 		$this->load->view('item_view.php', $data);
 		$this->load->view('footer.php');
@@ -143,7 +154,7 @@ class item extends CI_Controller
 			}
 
 
-			redirect('item/');
+			redirect('firstpage/');
 
 		}
 
@@ -185,7 +196,7 @@ class item extends CI_Controller
 			$this->db->delete('reward');			
 			$this->db->where('item_id',$_GET['id']);
 			$this->db->delete('monster_trophy');
-			redirect('item/');
+			redirect('firstpage/');
 		}
 	}
 }

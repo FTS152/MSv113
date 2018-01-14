@@ -12,4 +12,8 @@
 		<input type="text" class="form-control" name="imgurl" size="8" value="http://s5.heyxus.com/maple/custom/npc/np_e013.gif">
 	</div>
 	<button class="submit" style="margin-left:37.5%">EDIT</button>
+<<<<<<< HEAD
 </form>
+=======
+</form>
+>>>>>>> origin/master

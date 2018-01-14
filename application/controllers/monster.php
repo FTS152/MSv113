@@ -6,11 +6,16 @@ class Monster extends CI_Controller
 		if(!empty($_GET['name']))
 			$this->db->like('name',$_GET['name']);
 		$query=$this->db->get('monster');
+<<<<<<< HEAD
 		$data = array('data' => $query->result());
 
 		$this->load->view('header.php');
 		$this->load->view('monster_list.php', $data);
 		$this->load->view('footer.php');
+=======
+		echo json_encode($query->result(),JSON_UNESCAPED_UNICODE);
+		// $this->load->view('monster_list.php');
+>>>>>>> origin/master
 	}
 
 	public function view()
@@ -30,10 +35,16 @@ class Monster extends CI_Controller
 		$this->db->join('monster', 'monster_trophy.monster_id = monster.id');		
 		$this->db->where('monster.id',$_GET['id']);
 		$query_trophy=$this->db->get();
+<<<<<<< HEAD
 		$temp1 = array_merge($query_haunt->result());
 		$query=array_merge($query_data->result(),$temp1,$query_trophy->result());
 		$data = array('data' => $query);
 		//                       
+=======
+		$query=array_merge($query_data->result(),$query_haunt->result(),$query_trophy->result());
+		$data = array('data' => $query);
+		// echo var_dump($query);
+>>>>>>> origin/master
 		$this->load->view('header.php');
 		$this->load->view('monster_view.php', $data);
 		$this->load->view('footer.php');
@@ -153,7 +164,7 @@ class Monster extends CI_Controller
 			}
 
 
-			redirect('monster/');
+			redirect('firstpage/');
 
 		}
 		//這段都是從view複製過來的，用來匯入資料
@@ -194,7 +205,7 @@ class Monster extends CI_Controller
 			$this->db->delete('monster_haunt');			
 			$this->db->where('monster_id',$_GET['id']);
 			$this->db->delete('monster_trophy');
-			redirect('monster/');
+			redirect('firstpage/');
 		}
 	}
 }

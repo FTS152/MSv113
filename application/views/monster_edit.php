@@ -32,11 +32,19 @@
 	</div>
 	<div class="form-group">
 		<label for="hauntlist">Haunt List: </label>
+<<<<<<< HEAD
 		<textarea name="hauntlist" rows="5" cols="50" class="form-control"><?php foreach($data as $value): ?><?php if(property_exists($value, 'map_id'))echo $value->{'name'}."\n";?><?php endforeach; ?></textarea>
 	</div>
 	<div class="form-group">
 		<label for="trophylist">Trophy List: </label>
 		<textarea name="trophylist" rows="5" cols="50" class="form-control"><?php foreach($data as $value): ?><?php if(property_exists($value, 'item_id'))echo $value->{'name'}."\n";?><?php endforeach; ?></textarea>
+=======
+		<textarea name="hauntlist" rows="5" cols="50" class="form-control"></textarea>
+	</div>
+	<div class="form-group">
+		<label for="trophylist">Trophy List: </label>
+		<textarea name="trophylist" rows="5" cols="50" class="form-control"></textarea>
+>>>>>>> origin/master
 	</div>
 	<button type="submit" class="submit" style="margin-left:37.5%">SUBMIT</button>
 </form>

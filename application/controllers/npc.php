@@ -111,7 +111,7 @@ class Npc extends CI_Controller
 			}
 
 
-			redirect('npc/');
+			redirect('firstpage/');
 
 		}
 
@@ -150,7 +150,7 @@ class Npc extends CI_Controller
 			$this->db->delete('npc');
 			$this->db->where('npc_id',$_GET['id']);
 			$this->db->delete('npc_location');			
-			redirect('npc/');
+			redirect('firstpage/');
 		}
 	}
 

@@ -6,12 +6,17 @@ class map extends CI_Controller
 		if(!empty($_GET['name'])) $this->db->like('name',$_GET['name']);
 		if(!empty($_GET['area'])) $this->db->like('area',$_GET['area']);
 		$query=$this->db->get('map');
+<<<<<<< HEAD
 		$data = array('data' => $query->result());
 
 		$this->load->view('header.php');
 		$this->load->view('map_list.php', $data);
 		$this->load->view('footer.php');
 		
+=======
+		echo json_encode($query->result(),JSON_UNESCAPED_UNICODE);
+		// $this->load->view('map_list.php');
+>>>>>>> origin/master
 	}
 
 	public function view()
@@ -142,7 +147,7 @@ class map extends CI_Controller
 			}
 
 
-			redirect('map/');
+			redirect('firstpage/');
 
 		}
 		//這段都是從view複製過來的，用來匯入資料
@@ -183,7 +188,7 @@ class map extends CI_Controller
 			$this->db->delete('monster_haunt');			
 			$this->db->where('map_id',$_GET['id']);
 			$this->db->delete('npc_location');
-			redirect('map/');
+			redirect('firstpage/');
 		}
 	}
 }

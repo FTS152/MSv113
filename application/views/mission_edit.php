@@ -24,7 +24,11 @@
 	</div>
 	<div class="form-group">
 		<label for="rewardlist">Reward List: </label>
+<<<<<<< HEAD
 		<textarea name="trophylist" rows="5" cols="50" class="form-control"><?php foreach($data as $value): ?><?php if(property_exists($value, 'item_id'))echo $value->{'name'}."\n";?><?php endforeach; ?></textarea>
+=======
+		<textarea name="hauntlist" rows="5" cols="50" class="form-control"></textarea>
+>>>>>>> origin/master
 	</div>
 	<button class="submit" style="margin-left:37.5%">SUBMIT</button>
 </form>

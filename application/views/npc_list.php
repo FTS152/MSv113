@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container content" id="npc" style="display:block">
 	<div class="row col-sm-2"></div>
 	<div class="row col-sm-9">
@@ -32,3 +33,5 @@
 		  </table>
 	</div>
 </div>
+=======
+>>>>>>> origin/master

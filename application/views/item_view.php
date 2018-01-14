@@ -13,6 +13,7 @@
 		</div>
 		<div class="panel panel-warning">
 			<div class="panel-heading">任務獎勵</div>
+<<<<<<< HEAD
   			<div class="panel-body">
   				<?php foreach($data as $value): ?>
   					<?php 
@@ -40,6 +41,13 @@
   					?>
   				<?php endforeach; ?>
   			</div>
+=======
+  			<div class="panel-body">這裡會放會掉此道具的任務清單~ 按了可以連到任務</div>
+		</div>
+		<div class="panel panel-warning">
+			<div class="panel-heading">掉落怪物</div>
+  			<div class="panel-body">這裡會放會掉這個道具的怪獸清單~ 按了可以連到怪獸</div>
+>>>>>>> origin/master
 		</div>
 	</div>
 </div>

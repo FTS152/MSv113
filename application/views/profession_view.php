@@ -10,6 +10,7 @@
 				　母職業：<?php echo $data[0]->{'parent'} ?>
 			</div>
 		</div>
+<<<<<<< HEAD
 		<table class="table table-hover" style="text-align: center;">
 		    <thead>
 		      <tr>
@@ -29,6 +30,22 @@
   						
   					?>
   				<?php endforeach; ?>
+=======
+		<table class="table table-hover">
+		    <thead>
+		      <tr>
+		        <th>技能名稱</th>
+		        <th>技能等級</th>
+		        <th>技能敘述</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr>
+		    	<td>技能一</td>
+		    	<td>100</td>
+		    	<td>敘述一</td>	
+		      </tr>
+>>>>>>> origin/master
 		    </tbody>
 		</table>
 	</div>

@@ -9,11 +9,16 @@ class Mission extends CI_Controller
 		}
 		if(!empty($_GET['name'])) $this->db->like('name',$_GET['name']);
 		$query=$this->db->get('mission');
+<<<<<<< HEAD
 		$data = array('data' => $query->result());
 
 		$this->load->view('header.php');
 		$this->load->view('mission_list.php', $data);
 		$this->load->view('footer.php');
+=======
+		echo json_encode($query->result(),JSON_UNESCAPED_UNICODE);
+		// $this->load->view('mission_list.php');
+>>>>>>> origin/master
 	}
 
 	public function view()
@@ -34,7 +39,11 @@ class Mission extends CI_Controller
 		$query_reward=$this->db->get();
 		$query=array_merge($query_data->result(),$query_npc->result(),$query_reward->result());
 		$data = array('data' => $query);
+<<<<<<< HEAD
 		// echo var_dump($query_reward->result());
+=======
+
+>>>>>>> origin/master
 		$this->load->view('header.php');
 		$this->load->view('mission_view.php',$data);
 		$this->load->view('footer.php');
@@ -125,7 +134,7 @@ class Mission extends CI_Controller
 			}
 
 
-			redirect('mission/');
+			redirect('firstpage/');
 
 		}
 
@@ -165,7 +174,7 @@ class Mission extends CI_Controller
 			$this->db->delete('mission');
 			$this->db->where('mission_id',$_GET['id']);
 			$this->db->delete('reward');			
-			redirect('mission/');
+			redirect('firstpage/');
 		}
 	}
 }

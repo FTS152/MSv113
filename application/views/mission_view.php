@@ -24,6 +24,7 @@
 		</div>
 		<div class="panel panel-warning">
 			<div class="panel-heading">獎勵道具</div>
+<<<<<<< HEAD
   			<div class="panel-body">
   				<?php foreach($data as $value): ?>
   					<?php 
@@ -36,6 +37,9 @@
   					?>
   				<?php endforeach; ?>
   			</div>
+=======
+  			<div class="panel-body">這裡會放任務獎勵道具~ 按了可以連到道具的介紹頁</div>
+>>>>>>> origin/master
 		</div>
 	</div>
 </div>

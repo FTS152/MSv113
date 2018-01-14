@@ -4,11 +4,16 @@ class Profession extends CI_Controller
 	public function index()
 	{
 		$query=$this->db->get('profession');
+<<<<<<< HEAD
 		$data = array('data' => $query->result());
 
 		$this->load->view('header.php');
 		$this->load->view('profession_list.php', $data);
 		$this->load->view('footer.php');
+=======
+		echo json_encode($query->result(),JSON_UNESCAPED_UNICODE);
+		// $this->load->view('profession_list.php');
+>>>>>>> origin/master
 	}
 
 	public function view()
@@ -24,7 +29,11 @@ class Profession extends CI_Controller
 		$query_skill=$this->db->get();
 		$query=array_merge($query_data->result(),$query_skill->result());
 		$data = array('data' => $query);
+<<<<<<< HEAD
 		// echo var_dump($data);
+=======
+
+>>>>>>> origin/master
 		$this->load->view('header.php');
 		$this->load->view('profession_view.php', $data);
 		$this->load->view('footer.php');

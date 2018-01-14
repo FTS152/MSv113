@@ -15,6 +15,7 @@
 		</div>
 		<div class="panel panel-warning">
 			<div class="panel-heading">觸發任務</div>
+<<<<<<< HEAD
   			<div class="panel-body">
   				<?php foreach($data as $value): ?>
   					<?php 
@@ -40,6 +41,13 @@
   					?>
   				<?php endforeach; ?>
   			</div>
+=======
+  			<div class="panel-body">這裡會放可以觸發的任務~ 按了可以連到任務</div>
+		</div>
+		<div class="panel panel-warning">
+			<div class="panel-heading">出現地點</div>
+  			<div class="panel-body">這裡會放出現的地點~ 按了可以連到地圖</div>
+>>>>>>> origin/master
 		</div>
 	</div>
 </div>
