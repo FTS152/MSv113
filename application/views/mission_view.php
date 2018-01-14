@@ -17,9 +17,7 @@
 					<tbody><tr>
 						<th><?php echo $data[0]->{'lowest_lv'} ?></th>
 						<th><?php echo $data[0]->{'highest_lv'} ?></th>
-						<th><?php $id = $data[1]->{'id'};
-								  $name = $data[1]->{'name'};
-							 	  echo "<a href='npc/view?id=".$id."'>".$name."</a><br>";?></th>
+						<th><?php echo $data[1]->{'name'} ?></th>
 					</tr></tbody>
 				</table>
 			</div>

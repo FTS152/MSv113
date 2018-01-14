@@ -31,16 +31,12 @@
 		<input type="text" class="form-control" name="exp" size="8" value=<?php echo $data[0]->{'exp'} ?>>
 	</div>
 	<div class="form-group">
-		<label for="hauntlist">出沒地區: </label>
+		<label for="hauntlist">Haunt List: </label>
 		<textarea name="hauntlist" rows="5" cols="50" class="form-control"><?php foreach($data as $value): ?><?php if(property_exists($value, 'map_id'))echo $value->{'name'}."\n";?><?php endforeach; ?></textarea>
 	</div>
 	<div class="form-group">
-		<label for="trophylist">戰利品: </label>
+		<label for="trophylist">Trophy List: </label>
 		<textarea name="trophylist" rows="5" cols="50" class="form-control"><?php foreach($data as $value): ?><?php if(property_exists($value, 'item_id'))echo $value->{'name'}."\n";?><?php endforeach; ?></textarea>
-	</div>
-	<div class="form-group">
-		<label for="imgurl">圖片連結: </label>
-		<input type="text" class="form-control" name="imgurl" size="8" value=<?php echo $data[0]->{'imgurl'} ?>>
 	</div>
 	<button type="submit" class="submit" style="margin-left:37.5%">SUBMIT</button>
 </form>
