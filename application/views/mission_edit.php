@@ -24,7 +24,7 @@
 	</div>
 	<div class="form-group">
 		<label for="rewardlist">獎勵列表: </label>
-		<textarea name="trophylist" rows="5" cols="50" class="form-control"><?php foreach($data as $value): ?><?php if(property_exists($value, 'item_id'))echo $value->{'name'}."\n";?><?php endforeach; ?></textarea>
+		<textarea name="rewardlist" rows="5" cols="50" class="form-control"><?php foreach($data as $value): ?><?php if(property_exists($value, 'item_id'))echo $value->{'name'}."\n";?><?php endforeach; ?></textarea>
 	</div>
 	<button class="submit" style="margin-left:37.5%">SUBMIT</button>
 </form>

@@ -20,8 +20,8 @@
 		<input type="text" class="form-control" name="npc_name" size="8">
 	</div>
 	<div class="form-group">
-		<label for="rewardlist">Reward List: </label>
-		<textarea name="hauntlist" rows="5" cols="50" class="form-control"></textarea>
+		<label for="rewardlist">獎勵列表 </label>
+		<textarea name="rewardlist" rows="5" cols="50" class="form-control"></textarea>
 	</div>
 	<button class="submit" style="margin-left:37.5%">SUBMIT</button>
 </form>

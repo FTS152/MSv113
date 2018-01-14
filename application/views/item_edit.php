@@ -16,7 +16,7 @@
 	</div>
 	<div class="form-group">
 		<label for="rewardlist">任務獎勵: </label>
-		<textarea name="hauntlist" rows="5" cols="50" class="form-control"><?php foreach($data as $value): ?><?php if(property_exists($value, 'mission_id'))echo $value->{'name'}."\n";?><?php endforeach; ?></textarea>
+		<textarea name="rewardlist" rows="5" cols="50" class="form-control"><?php foreach($data as $value): ?><?php if(property_exists($value, 'mission_id'))echo $value->{'name'}."\n";?><?php endforeach; ?></textarea>
 	</div>
 	<div class="form-group">
 		<label for="trophylist">掉落怪物: </label>

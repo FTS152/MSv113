@@ -12,11 +12,11 @@
 		<textarea name="description" rows="5" cols="50" class="form-control"></textarea>
 	</div>
 	<div class="form-group">
-		<label for="rewardlist">Reward List: </label>
-		<textarea name="hauntlist" rows="5" cols="50" class="form-control"></textarea>
+		<label for="rewardlist">任務獎勵: </label>
+		<textarea name="rewardlist" rows="5" cols="50" class="form-control"></textarea>
 	</div>
 	<div class="form-group">
-		<label for="trophylist">Trophy List: </label>
+		<label for="trophylist">掉落怪物: </label>
 		<textarea name="trophylist" rows="5" cols="50" class="form-control"></textarea>
 	</div>
 	<button class="submit" style="margin-left:37.5%">SUBMIT</button>
