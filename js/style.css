@@ -40,40 +40,6 @@ body{
 	box-shadow: 4px 3px rgb(175,171,171);
 	transform: translateY(2px);
 }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-.submit_big{
-	display: inline-block;
-	margin-left: 25px;
-	padding: 7px 7px;
-	width:180px;
-	font-size: 24px;
-	font-weight: bold;
-	cursor: pointer;
-	text-align: center;
-	text-decoration: none;
-	outline: none;
-	background-color: rgb(255, 137, 35);
-	color: white;
-	border: none;
-	border-radius: 3px;
-	box-shadow: 4px 3px rgb(244, 113, 0);
-}
-.submit_big:hover{
-	background-color: rgb(255,223,70);
-	color: rgb(255, 137, 35);
-	box-shadow:  4px 3px rgb(242, 205, 29);
-}
-.submit_big:active {
-	background-color: rgb(255, 137, 35);
-	color: white;
-	box-shadow: 4px 3px rgb(244, 113, 0);
-	transform: translateY(2px);
-}
-=======
->>>>>>> origin/master
->>>>>>> cd701073b0938c9d68cc7316dff47dfac45e6ae5
 .add{
 	display: inline-block;
 	margin-left: 25px;
@@ -129,26 +95,9 @@ body{
 	width:50px;
 	height:65px;
 }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-.content{
-	display:none;
-}
->>>>>>> origin/master
->>>>>>> cd701073b0938c9d68cc7316dff47dfac45e6ae5
 .content .form-group{
 	margin-left:20%;
 }
 .content .form-group input, .content .form-group select{
 	width: 50%;
-<<<<<<< HEAD
 }
-=======
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> origin/master
->>>>>>> cd701073b0938c9d68cc7316dff47dfac45e6ae5

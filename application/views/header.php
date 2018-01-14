@@ -23,7 +23,16 @@
 				<li><a href="item/">道具資料</a></li>
 		    </ul> 
 		    <ul class="nav navbar-nav navbar-right">
-		    	<li id="login-button"><a href="login"><span class="glyphicon glyphicon-user"></span>LOG IN</a></li>
+		    	<?php if(!$this->session->userdata('username')){?>		
+ 		    		<li id="login-button"><a href="login"><span class="glyphicon glyphicon-user"></span>LOG IN</a></li>			
+ 		    		<?php	    				
+ 		    	}		
+ 		    	else{		
+ 		    		?>		
+ 		    		<li id="logout-button"><a href="login/logout"><span class="glyphicon glyphicon-user"></span>HELLO, ADMIN. LOGOUT</a></li>		
+ 		    		<?php			    				
+ 		    	}		
+ 		    	?>
 		    </ul>
 		</div>
 	</nav>

@@ -28,12 +28,16 @@
 		<input type="text" class="form-control" name="exp" size="8">
 	</div>
 	<div class="form-group">
-		<label for="hauntlist">Haunt List: </label>
+		<label for="hauntlist">出沒地區: </label>
 		<textarea name="hauntlist" rows="5" cols="50" class="form-control"></textarea>
 	</div>
 	<div class="form-group">
-		<label for="trophylist">Trophy List: </label>
+		<label for="trophylist">戰利品: </label>
 		<textarea name="trophylist" rows="5" cols="50" class="form-control"></textarea>
 	</div>
+	<div class="form-group">		
+ 		<label for="imgurl">圖片連結: </label>		
+ 		<input type="text" class="form-control" name="imgurl" size="8">		
+ 	</div>
 	<button class="submit" style="margin-left:37.5%">SUBMIT</button>
 </form>

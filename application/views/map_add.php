@@ -8,11 +8,11 @@
 		<input type="text" class="form-control" name="area" size="8">
 	</div>
 	<div class="form-group">
-		<label for="hauntlist">Haunt List: </label>
+		<label for="hauntlist">NPC列表: </label>
 		<textarea name="hauntlist" rows="5" cols="50" class="form-control"></textarea>
 	</div>
 	<div class="form-group">
-		<label for="trophylist">Trophy List: </label>
+		<label for="trophylist">怪物列表: </label>
 		<textarea name="trophylist" rows="5" cols="50" class="form-control"></textarea>
 	</div>
 	<button class="submit" style="margin-left:37.5%">EDIT</button>
