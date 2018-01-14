@@ -8,12 +8,12 @@
 		<input type="text" class="form-control" name="area" size="8">
 	</div>
 	<div class="form-group">
-		<label for="hauntlist">NPC列表: </label>
-		<textarea name="hauntlist" rows="5" cols="50" class="form-control"></textarea>
+		<label for="locatelist">NPC列表: </label>
+		<textarea name="locatelist" rows="5" cols="50" class="form-control"></textarea>
 	</div>
 	<div class="form-group">
-		<label for="trophylist">怪物列表: </label>
-		<textarea name="trophylist" rows="5" cols="50" class="form-control"></textarea>
+		<label for="hauntlist">怪物列表: </label>
+		<textarea name="hauntlist" rows="5" cols="50" class="form-control"></textarea>
 	</div>
 	<button class="submit" style="margin-left:37.5%">EDIT</button>
 </form>

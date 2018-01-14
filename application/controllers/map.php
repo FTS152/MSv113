@@ -80,7 +80,7 @@ class map extends CI_Controller
 						'map_id' => $map_id,
 						'npc_id' => $row,
 					);
-					$this->db->insert('npc_location',$trophy_data);
+					$this->db->insert('npc_location',$locate_data);
 				}
 			}
 
