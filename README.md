@@ -8,6 +8,10 @@
 道具、NPC 會出現在哪個地圖......)。希望經由此資料庫，可以讓玩家取得想要的
 資訊，增加遊戲體驗。
 
+Maple Story Library
+
+Maple Story is recently well-known among students in NTU. It features numerous gaming contents. There are multiple professions and countless places for gamers to explore. Our main goal is to create a database which allows players to fetch the information they need ASAP(Ex. monster data and NPC data). With this database, we hope to enhance the overall user experience
+
 目前完成功能：
 
 後臺管理
